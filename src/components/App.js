@@ -8,7 +8,7 @@ class App extends React.Component {
 	state = { videos: [], selectedVideo: null };
 
 	componentDidMount() {
-		this.onTermSubmit('ReactJS');
+		this.onTermSubmit("ReactJS");
 	}
 
 	onTermSubmit = async (term) => {
@@ -25,21 +25,21 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="ui container">
+			<div className="ui container" style={{ marginTop: "1em" }}>
 				<SearchBar onFormSubmit={this.onTermSubmit} />
-				<div className="ui grid">
+				<div className="ui grid stackable">
 					<div className="ui row">
-						<div className="ten wide column">
+						<div className="sixteen wide tablet ten wide computer column">
 							<VideoDetail video={this.state.selectedVideo} />
 						</div>
-						<div className="six wide column">
+						<div className="sixteen wide tablet six wide computer column">
 							<VideoList
 								videos={this.state.videos}
 								onVideoSelect={this.onVideoSelect}
 							/>
 						</div>
 					</div>
-				</div>
+				</div>{" "}
 			</div>
 		);
 	}
